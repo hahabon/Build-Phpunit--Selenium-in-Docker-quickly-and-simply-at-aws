@@ -1,9 +1,24 @@
 <?php
 class webtest_retrieve extends PHPUnit_Extensions_SeleniumTestCase
 {
+  public static $browsers = array(
+      array(
+        'name'    => 'Firefox on Linux',
+        'browser' => '*firefox',
+        'host'    => 'localhost',
+        'port'    => 4444,
+        'timeout' => 30000,
+      ),
+      array(
+        'name'    => 'chrome on Linux',
+        'browser' => '*chrome',
+        'host'    => 'localhost',
+        'port'    => 4444,
+        'timeout' => 30000,
+      ),
+  );
   protected function setUp()
   {
-    $this->setBrowser("*chrome");
     $this->setBrowserUrl("http://www.google.com.tw");
   }
 
